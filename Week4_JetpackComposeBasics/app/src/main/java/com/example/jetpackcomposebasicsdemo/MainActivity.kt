@@ -42,6 +42,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.sp
+import androidx.room.util.TableInfo
 import com.example.jetpackcomposebasicsdemo.assignment1solution.ToDo
 import com.example.jetpackcomposebasicsdemo.navigation.ShoppingApp
 import com.example.jetpackcomposebasicsdemo.navigation2.CourseApp
@@ -57,9 +58,10 @@ class MainActivity : ComponentActivity() {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
 //                    Screen(modifier = Modifier.padding(innerPadding))
 //                     ModDemo(modifier = Modifier.padding(innerPadding))
-                        MyCourseApp(modifier = Modifier.padding(innerPadding))
+//                        MyCourseApp(modifier = Modifier.padding(innerPadding))
 //                    MyShop(modifier = Modifier.padding(innerPadding))
 //                    CounterScreen(modifier = Modifier.padding(innerPadding))
+                    CourseDBApp(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
@@ -224,6 +226,15 @@ fun MyCourseApp(modifier: Modifier = Modifier) {
     }
 }
 
+
+// ******************************************************
+// data persistence - room db
+@Composable
+fun CourseDBApp(modifier: Modifier) {
+    Column(modifier ) {
+        com.example.jetpackcomposebasicsdemo.roomdb.CourseApp()
+    }
+}
 
 
 

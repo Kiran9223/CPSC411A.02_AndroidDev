@@ -46,6 +46,7 @@ import androidx.room.util.TableInfo
 import com.example.jetpackcomposebasicsdemo.assignment1solution.ToDo
 import com.example.jetpackcomposebasicsdemo.navigation.ShoppingApp
 import com.example.jetpackcomposebasicsdemo.navigation2.CourseApp
+import com.example.jetpackcomposebasicsdemo.retrofit.UserScreen
 import com.example.jetpackcomposebasicsdemo.viewmodel.CountScreen
 
 class MainActivity : ComponentActivity() {
@@ -61,7 +62,9 @@ class MainActivity : ComponentActivity() {
 //                        MyCourseApp(modifier = Modifier.padding(innerPadding))
 //                    MyShop(modifier = Modifier.padding(innerPadding))
 //                    CounterScreen(modifier = Modifier.padding(innerPadding))
-                    CourseDBApp(modifier = Modifier.padding(innerPadding))
+//                    CourseDBApp(modifier = Modifier.padding(innerPadding))
+                        UserApp(modifier = Modifier.padding(innerPadding))
+
                 }
             }
         }
@@ -233,6 +236,15 @@ fun MyCourseApp(modifier: Modifier = Modifier) {
 fun CourseDBApp(modifier: Modifier) {
     Column(modifier ) {
         com.example.jetpackcomposebasicsdemo.roomdb.CourseApp()
+    }
+}
+
+// ******************************************************
+// Retrofit demo
+@Composable
+fun UserApp(modifier: Modifier) {
+    Column(modifier) {
+        UserScreen()
     }
 }
 

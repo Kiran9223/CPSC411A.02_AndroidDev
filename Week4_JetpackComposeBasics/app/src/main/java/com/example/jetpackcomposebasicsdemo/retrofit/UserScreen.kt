@@ -19,12 +19,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.compose.foundation.lazy.items
+import kotlinx.coroutines.delay
 
 @Composable
 fun UserScreen(viewModel: UserViewModel = viewModel()) {
-    val users = emptyList<User>()
-    val isLoading = false
-    val errorMessage = null
+    val users by viewModel.users.collectAsState()
+    val isLoading by viewModel.isLoading.collectAsState()
+    val errorMessage by viewModel.errorMessage.collectAsState()
+
 
 
     Column(

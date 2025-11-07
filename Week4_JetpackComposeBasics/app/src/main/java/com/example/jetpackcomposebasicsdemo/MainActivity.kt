@@ -9,45 +9,28 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
-import androidx.compose.material3.Checkbox
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.jetpackcomposebasicsdemo.ui.theme.JetpackComposeBasicsDemoTheme
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.painter.Painter
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.unit.sp
-import androidx.room.util.TableInfo
-import com.example.jetpackcomposebasicsdemo.assignment1solution.ToDo
 import com.example.jetpackcomposebasicsdemo.navigation.ShoppingApp
 import com.example.jetpackcomposebasicsdemo.navigation2.CourseApp
 import com.example.jetpackcomposebasicsdemo.retrofit.UserScreen
 import com.example.jetpackcomposebasicsdemo.viewmodel.CountScreen
+import com.example.jetpackcomposebasicsdemo.notesapp.NoteScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,8 +46,8 @@ class MainActivity : ComponentActivity() {
 //                    MyShop(modifier = Modifier.padding(innerPadding))
 //                    CounterScreen(modifier = Modifier.padding(innerPadding))
 //                    CourseDBApp(modifier = Modifier.padding(innerPadding))
-                        UserApp(modifier = Modifier.padding(innerPadding))
-
+//                        UserApp(modifier = Modifier.padding(innerPadding))
+                        NotesApp(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
@@ -245,6 +228,15 @@ fun CourseDBApp(modifier: Modifier) {
 fun UserApp(modifier: Modifier) {
     Column(modifier) {
         UserScreen()
+    }
+}
+
+// ******************************************************
+// Retrofit part 2 - CRUD - Notes App
+@Composable
+fun NotesApp(modifier: Modifier) {
+    Column(modifier) {
+        NoteScreen()
     }
 }
 

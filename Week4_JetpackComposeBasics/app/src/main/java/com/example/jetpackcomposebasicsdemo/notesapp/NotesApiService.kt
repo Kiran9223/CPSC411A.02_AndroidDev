@@ -11,5 +11,17 @@ interface NotesApiService {
     @GET("notes")
     suspend fun getAllNotes(): List<Note>
 
+    @POST("notes")
+    suspend fun createNote(@Body note: NoteRequest): Note
+
+    @PUT("notes/{id}")
+    suspend fun updateNote(@Path("id") noteId: String, @Body note: NoteRequest): Note
+
+    @GET("notes")
+    suspend fun searchNotes(
+        @Query("title") title: String? = null,
+        @Query("body") body: String? = null
+    ): List<Note>
+
 
 }

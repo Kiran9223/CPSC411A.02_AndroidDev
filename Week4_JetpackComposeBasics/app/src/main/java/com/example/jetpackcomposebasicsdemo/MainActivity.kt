@@ -1,8 +1,6 @@
 package com.example.jetpackcomposebasicsdemo
 
-import android.content.Context
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -10,7 +8,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
@@ -26,6 +23,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
+import com.example.jetpackcomposebasicsdemo.authapp.AppNavigation
 import com.example.jetpackcomposebasicsdemo.navigation.ShoppingApp
 import com.example.jetpackcomposebasicsdemo.navigation2.CourseApp
 import com.example.jetpackcomposebasicsdemo.retrofit.UserScreen
@@ -47,8 +45,10 @@ class MainActivity : ComponentActivity() {
 //                    CounterScreen(modifier = Modifier.padding(innerPadding))
 //                    CourseDBApp(modifier = Modifier.padding(innerPadding))
 //                        UserApp(modifier = Modifier.padding(innerPadding))
-                        NotesApp(modifier = Modifier.padding(innerPadding))
+//                        NotesApp(modifier = Modifier.padding(innerPadding))
+                        AuthApp(modifier = Modifier.padding(innerPadding))
                 }
+
             }
         }
     }
@@ -237,6 +237,15 @@ fun UserApp(modifier: Modifier) {
 fun NotesApp(modifier: Modifier) {
     Column(modifier) {
         NoteScreen()
+    }
+}
+
+// ******************************************************
+// Firebase authentication
+@Composable
+fun AuthApp(modifier: Modifier) {
+    Column(modifier) {
+        AppNavigation()
     }
 }
 

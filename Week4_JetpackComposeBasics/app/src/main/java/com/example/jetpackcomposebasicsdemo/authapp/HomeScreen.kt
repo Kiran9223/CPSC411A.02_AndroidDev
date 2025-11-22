@@ -15,7 +15,7 @@ fun HomeScreen(
     viewModel: AuthViewModel
 ) {
     // update auth state value
-    val authState = null
+    val authState by viewModel.authState.collectAsState()
 
     // Get user info
     val user = if (authState is AuthState.Success) {

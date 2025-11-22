@@ -37,7 +37,7 @@ fun LoginScreen(
     var password by remember { mutableStateOf("") }
 
     // Observe auth state from ViewModel
-    val authState = null
+    val authState by viewModel.authState.collectAsState()
 
     // Navigate to Home Screen if login is successful
     LaunchedEffect(authState) {
